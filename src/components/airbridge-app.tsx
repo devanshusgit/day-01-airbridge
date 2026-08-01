@@ -117,12 +117,12 @@ export function AirbridgeApp() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-2 px-6 py-6 text-xs text-muted sm:flex-row sm:justify-between">
-          <p>Day 1 of 60 — 60 Days Fires</p>
           <p>Built by Devanshu</p>
           <a
             href="https://github.com/devanshusgit/day-01-airbridge"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View AirBridge on GitHub"
             className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
           >
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
