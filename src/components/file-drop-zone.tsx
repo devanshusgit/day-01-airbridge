@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { UploadCloud } from "lucide-react";
-import { MAX_FILE_SIZE_BYTES } from "@/lib/constants";
+import { MAX_FILE_SIZE_BYTES, RECOMMENDED_DESKTOP_BYTES, RECOMMENDED_MOBILE_BYTES } from "@/lib/constants";
 import { formatBytes } from "@/lib/format";
 
 interface FileDropZoneProps {
@@ -43,7 +43,13 @@ export function FileDropZone({ onFileSelected, disabled }: FileDropZoneProps) {
       <UploadCloud className="h-8 w-8 text-accent" aria-hidden="true" />
       <div>
         <p className="font-medium text-foreground">Drag and drop a file, or click to browse</p>
-        <p className="mt-1 text-xs text-muted">One file at a time · up to {formatBytes(MAX_FILE_SIZE_BYTES)} (prototype limit)</p>
+        <p className="mt-1 text-xs text-muted">
+          One file at a time · up to {formatBytes(MAX_FILE_SIZE_BYTES)} (prototype limit)
+        </p>
+        <p className="mt-1 text-xs text-muted">
+          Recommended: under {formatBytes(RECOMMENDED_DESKTOP_BYTES)} on desktop, under{" "}
+          {formatBytes(RECOMMENDED_MOBILE_BYTES)} on mobile
+        </p>
       </div>
       <input
         ref={inputRef}

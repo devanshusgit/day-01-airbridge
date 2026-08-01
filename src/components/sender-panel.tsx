@@ -8,6 +8,7 @@ import { RoomCode } from "./room-code";
 import { FileDropZone } from "./file-drop-zone";
 import { TransferProgress } from "./transfer-progress";
 import { StatusMessage } from "./status-message";
+import { TransferGuidelines } from "./transfer-guidelines";
 
 type Transfer = ReturnType<typeof usePeerTransfer>;
 
@@ -70,6 +71,7 @@ export function SenderPanel({ transfer, onReset }: { transfer: Transfer; onReset
       {connectionState === "connected" && (
         <div className="space-y-5">
             <StatusMessage tone="success" title="Device connected" />
+            <TransferGuidelines />
 
           {(transferState === "idle" ||
             transferState === "file-selected" ||

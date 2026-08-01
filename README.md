@@ -4,6 +4,9 @@
 
 A clean, peer-to-peer file-transfer web app. Two devices connect using a short room code and send one file directly to each other over a WebRTC DataChannel — the file itself never touches a server.
 
+**Live demo**: https://airbridge-transfer.vercel.app
+**GitHub**: https://github.com/devanshusgit/day-01-airbridge
+
 > Built as a one-day prototype. See [Prototype limitations](#prototype-limitations) before relying on it for anything beyond a demo.
 
 ## Screenshot
@@ -90,6 +93,8 @@ Manual testing is the primary way to verify this prototype (there is no automate
 
 ## Deployment (Vercel)
 
+Live at https://airbridge-transfer.vercel.app.
+
 1. Push this project to a Git repository.
 2. Import the repository in [Vercel](https://vercel.com/new).
 3. Framework preset: Next.js (auto-detected). No environment variables are required.
@@ -105,7 +110,7 @@ Manual testing is the primary way to verify this prototype (there is no automate
 
 This is a one-day build, scoped deliberately:
 
-- **File size limit**: capped at 512 MB, since the receiving browser buffers the whole file in memory before offering it as a download.
+- **File size limit**: 512 MB is the maximum technical limit, since the receiving browser buffers the whole file in memory before offering it as a download. That's a hard ceiling, not a guarantee — for a smoother experience, we recommend staying under 250 MB on desktop and under 100 MB on mobile, since larger transfers take longer and depend on both devices' available memory and both networks' speed. A 512 MB transfer isn't guaranteed to succeed on every device or connection.
 - **One file at a time**: no multi-file or folder transfers, and no transfer queue.
 - **No TURN relay configured**: connections behind very restrictive NATs/firewalls may fail (see above).
 - **No persistence**: refreshing either tab ends the session; there's no transfer history or resumable transfers.
@@ -124,4 +129,4 @@ This is a one-day build, scoped deliberately:
 
 Built by **Devanshu** as Day 1 of the **60 Days Fires** challenge — 60 one-day projects.
 
-GitHub: _add your repository link here_
+GitHub: https://github.com/devanshusgit/day-01-airbridge

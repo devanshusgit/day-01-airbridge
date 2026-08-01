@@ -8,6 +8,7 @@ import { sanitizeFileName } from "@/lib/file-transfer";
 import { ConnectionVisual } from "./connection-visual";
 import { TransferProgress } from "./transfer-progress";
 import { StatusMessage } from "./status-message";
+import { TransferGuidelines } from "./transfer-guidelines";
 
 type Transfer = ReturnType<typeof usePeerTransfer>;
 
@@ -101,6 +102,7 @@ export function ReceiverPanel({ transfer, onReset }: { transfer: Transfer; onRes
       {connectionState === "connected" && (
         <div className="space-y-5">
           <StatusMessage tone="success" title="Connected to sender" />
+          <TransferGuidelines />
 
           {transferState === "idle" && (
             <StatusMessage tone="info" title="Waiting for the sender to choose a file" />
